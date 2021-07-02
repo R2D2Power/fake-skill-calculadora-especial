@@ -1,0 +1,102 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "calculadora especial",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "salir",
+            "cancelar"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "informacion",
+            "ayuda",
+            "ayudar"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "parar",
+            "detener "
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "sumarIntent",
+          "slots": [
+            {
+              "name": "numSumA",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "numSumB",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "sumar {numSumA} mas {numSumB}"
+          ]
+        },
+        {
+          "name": "restarIntent",
+          "slots": [
+            {
+              "name": "numResA",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "numResB",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "restar {numResA} menos {numResB}"
+          ]
+        },
+        {
+          "name": "multiplicarIntent",
+          "slots": [
+            {
+              "name": "numMultA",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "numMultB",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "multiplica {numMultA} por {numMultB}"
+          ]
+        },
+        {
+          "name": "dividirIntent",
+          "slots": [
+            {
+              "name": "numDivA",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "numDivB",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "dividir",
+            "divide {numDivA} entre {numDivB}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "7"
+}

@@ -1,0 +1,58 @@
+{
+    "type": "APL",
+    "version": "1.4",
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.3.0"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "helloworldData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100%",
+                "height": "100%",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "https://raw.githubusercontent.com/TheBuki/imagenes/main/WhatsApp%20Image%202021-05-27%20at%2010.08.31%20PM.jpeg"
+                    },
+                    {
+                        "type": "Container",
+                        "width": "600dp",
+                        "height": "200dp",
+                        "paddingTop": "16dp",
+                        "paddingLeft": "16dp",
+                        "paddingRight": "16dp",
+                        "paddingBottom": "16dp",
+                        "item": {
+                            "type": "Text",
+                            "width": "600dp",
+                            "height": "100dp",
+                            "paddingTop": "12dp",
+                            "paddingBottom": "12dp",
+                            "position": "relative",
+                            "text": "${helloworldData.properties.helloText}",
+                            "fontSize": "60dp",
+                            "textAlign": "center",
+                            "textAlignVertical": "center"
+                        },
+                        "alignSelf": "center",
+                        "justifyContent": "center",
+                        "shadowColor": "#FAF5"
+                    }
+                ]
+            }
+        ]
+    }
+
+    
+}

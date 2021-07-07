@@ -34,15 +34,32 @@
           "slots": [
             {
               "name": "numSumA",
-              "type": "AMAZON.NUMBER"
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{numSumA}"
+              ]
             },
             {
               "name": "numSumB",
-              "type": "AMAZON.NUMBER"
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{numSumB}"
+              ]
+            },
+            {
+              "name": "resSum",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "samples": [
+                "{resSum}"
+              ]
             }
           ],
           "samples": [
-            "sumar {numSumA} mas {numSumB}"
+            "{resSum} es el resultado de sumar {numSumA} mas {numSumB}",
+            "sumar",
+            "mas",
+            "{numSumA} mas {numSumB} es igual a {resSum}",
+            "sumar {numSumA} mas {numSumB} resulta {resSum}"
           ]
         },
         {
@@ -96,7 +113,105 @@
         }
       ],
       "types": []
-    }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "sumarIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "numSumA",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.719546029522.1564295522530",
+                "elicitation": "Elicit.Slot.719546029522.1564295522530"
+              }
+            },
+            {
+              "name": "numSumB",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.719546029522.9995314936",
+                "elicitation": "Elicit.Slot.719546029522.9995314936"
+              }
+            },
+            {
+              "name": "resSum",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.719546029522.148462457578",
+                "elicitation": "Elicit.Slot.719546029522.148462457578"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.719546029522.1564295522530",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "cual es tu primer numero?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.719546029522.1564295522530",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{numSumA} es tu primer numero?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.719546029522.9995314936",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cual es tu segundo numero?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.719546029522.9995314936",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{numSumB} es tu segundo numero?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.719546029522.148462457578",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Cual es el resulatdo de la suma?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.719546029522.148462457578",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "El resultado de la suma es {resSum} ?"
+          }
+        ]
+      }
+    ]
   },
-  "version": "7"
+  "version": "11"
 }

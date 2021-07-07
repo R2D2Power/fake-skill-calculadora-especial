@@ -33,11 +33,21 @@ const sumarIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'sumarIntent';
     },
     handle(handlerInput) {
-        const NumSumA = handlerInput.requestEnvelope.request.intent.slots.numSumA.value;
-        const NumSumB = handlerInput.requestEnvelope.request.intent.slots.numSumB.value;
-        const resultadoSuma = parseInt(NumSumA,10) + parseInt(NumSumB,10);
-        const speakOutput = `El resultado de la suma es ${String(resultadoSuma)}` ;
-
+        var NumSumA = Number(handlerInput.requestEnvelope.request.intent.slots.numSumA.value);
+        var  NumSumB = Number(handlerInput.requestEnvelope.request.intent.slots.numSumB.value);
+        var ResSum = Number(handlerInput.requestEnvelope.request.intent.slots.resSum.value);
+        
+        var resultadoSuma = NumSumA + NumSumB;
+        //const speakOutput = `El resultado de la suma es ${resultadoSuma}` ;
+        
+        var speakOutput; // = `${resultadoSuma}`; 
+        
+        if (ResSum === resultadoSuma){
+             speakOutput = `Correcto`;
+        }else{
+             speakOutput = `Incorrecto, el resultado correcto es ${resultadoSuma}` ;
+        }
+        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -96,7 +106,7 @@ const multiplicarIntentHandler = {
         const NumMultA = handlerInput.requestEnvelope.request.intent.slots.numMultA.value;
         const NumMultB = handlerInput.requestEnvelope.request.intent.slots.numMultB.value;
         const resultadoMult = parseInt(NumMultA, 10) * parseInt(NumMultB,10);
-        const speakOutput = `El resultado de l multiplicacion es ${resultadoMult}`;
+        const speakOutput = `El resultado de la multiplicacion es ${resultadoMult}`;
         
         return handlerInput.responseBuilder
             .speak(speakOutput)
